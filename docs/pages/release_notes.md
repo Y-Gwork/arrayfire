@@ -1,6 +1,50 @@
 Release Notes {#releasenotes}
 ==============
 
+v3.7.3
+======
+
+Improvements
+------------
+- Add f16 support for histogram - \PR{2984}
+- Update confidence connected components example for better illustration - \PR{2968}
+- Enable disk caching of OpenCL kernel binaries - \PR{2970}
+- Refactor extension of kernel binaries stored to disk `.bin` - \PR{2970}
+- Add minimum driver versions for CUDA toolkit 11 in internal map - \PR{2982}
+- Fix  arguments to sparse transpose tests - \PR{2985}
+- Fix formatting of doxygen comments in array header - \PR{2987}
+- Enable Uniform Chi2 tests for CUDA and OpenCL  - \PR{2980}
+- Fix warning in compile module about the length of the error message - \PR{2980}
+- Improve warnings messages from run-time kernel compilation functions - \PR{2996}
+
+Fixes
+-----
+- Fix a race condition in confidence connected components function for OpenCL backend - \PR{2969}
+- Safely ignore disk cache failures in CUDA backend for compiled kernel binaries - \PR{2970}
+- Fix incorrect macro and name in documentation - \PR{2973}
+- Fix randn by passing in correct values to Box-Muller - \PR{2980}
+- Fix rounding issues in Box-Muller function used for RNG - \PR{2980}
+- Fix problems in RNG for older compute architectures with fp16 - \PR{2980}  \PR{2996}
+- Fix performance regression of approx functions - \PR{2977}
+- Remove assert that check that signal/filter types have to be the same - \PR{2993}
+- Fix `checkAndSetDevMaxCompute` when the device cc is greater than max - \PR{2996}
+- Fix bias factor of variance in var_all and cov functions - \PR{2986}
+
+Build Fixes
+-----------
+- Add missing non-const `Array::getNode` method in CPU/OpenCL backends - \PR{2974}
+- Add missing opencl-arrayfire interoperability functions in unified backend  - \PR{2981}
+- Replace underscores with dashes in deb package names - \PR{2983}
+- Fix clblast patch related cmake code - \PR{2991}
+- Build Unified backend without OpenCL or CUDA installed if necessary - \PR{2989}
+- Use source-forge to download doxygen for ci builds - \PR{2988}
+- Add utility header included from cuda_fp16.hpp for CUDA 9 - \PR{2996}
+
+Contributions
+-------------
+Special thanks to our contributors:
+[P. J. Reed][1]
+
 v3.7.2
 ======
 
